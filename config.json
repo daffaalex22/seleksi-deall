@@ -1,0 +1,13 @@
+{
+    "debug": true,
+    "server": {
+        "address": ":8080"
+    },
+    "context": {
+        "timeout": 2
+    },
+    "jwt": {
+        "secret": "DEALL#123",
+        "expired": 24
+    }
+}
