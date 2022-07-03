@@ -79,7 +79,7 @@ Or
 $ kubectl get pods
 ```
 
-5. Forward service to be LOCALLY accessible. With the following command, minikube will return a url for accessing the API LOCALLY. The API is can then be tested on postman.
+5. Forward service to be LOCALLY accessible. With the following command, minikube will return a url for accessing the API. The API is can then be tested on postman.
 ```
 minikube service api-service --url
 ```
