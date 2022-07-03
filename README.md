@@ -8,7 +8,7 @@
     - Unit Testing
     - Additional endpoint for getting user by id
 
- * The screenshot for prove of local deployment is attached [here](https://google.com) inside the screenshots folder
+ * The screenshot for proof of local deployment is attached [here](https://google.com) inside the screenshots folder
  * The Architecture Diagram is attached on the root folder as [local-architecture-diagram.png](https://github.com/daffaalex22/seleksi-deall/blob/main/local-architecture-diagram.png).
  * The API Documentation is accessible [here](https://documenter.getpostman.com/view/17548510/UzJFudHb)
  * Admin credential is the following
@@ -45,7 +45,45 @@ Deployment:
 The API Documentation can be accessed [here](https://documenter.getpostman.com/view/17548510/UzJFudHb).
 
 ### Local
-Running the project locally is pretty straightforward. Follow the How To Run The Project part and access the following address with the route provided in the [API Documentation](https://documenter.getpostman.com/view/17548510/UzJFudHb)
+Deploying the project locally is pretty straightforward. Follow the [How To Run The Project](https://github.com/daffaalex22/seleksi-deall#how-to-run-the-project) part and access the following address with the route provided in the [API Documentation](https://documenter.getpostman.com/view/17548510/UzJFudHb). 
+
+It can be also ran without Docker or Kubernetes. 
+1. Clone the repo.
+2. Provides the following environment variables:
+```
+DB_URL=localhost:3306
+DB_USER=YOUR_MYSQL_USERNAME
+DB_PASSWORD=YOUR_MYSQL_USER_PASSWORD
+DB_NAME=seleksi-deall
+```
+Or use the following launch.json for running on debug mode on vscode:
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/main.go",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "DB_URL": "localhost:3306",
+                "DB_USER": "root",
+                "DB_PASSWORD": "haji12345",
+                "DB_NAME": "seleksi-deall",
+            },
+            "args": []
+        }
+    ]
+}
+```
+3. Run using debug mode on vscode or type:
+```
+go run main.go
+```
+4. Then access the following url.
 > http://localhost:8080/
 
 ### Public IP Address
