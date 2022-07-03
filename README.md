@@ -1,8 +1,6 @@
 # REST API 
 ### By **Daffa' Alexander**: for Deall Backend Engineer Application Process (Technical Assessment)
 
-<br>
-
 ## Description
 This is a REST API mini-project created for Deall Application Proccess for Backend Engineer position. The project is created in Go Programming Language and uses MySQL as the RDBMS. Without further ado, lets jump right in into the contents.
 
