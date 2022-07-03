@@ -6,7 +6,7 @@ import (
 )
 
 type Domain struct {
-	Id        string
+	ID        string
 	Name      string
 	Email     string
 	Token     string
@@ -18,7 +18,7 @@ type Domain struct {
 
 type UsersUseCaseInterface interface {
 	UsersLogin(ctx context.Context, domain Domain) (Domain, error)
-	UsersGetById(ctx context.Context, id string) (Domain, error)
+	UsersGetByID(ctx context.Context, id string) (Domain, error)
 	UsersGetAll(ctx context.Context) ([]Domain, error)
 	UsersAdd(ctx context.Context, domain Domain) (Domain, error)
 	UsersUpdate(ctx context.Context, domain Domain) (Domain, error)
@@ -27,7 +27,7 @@ type UsersUseCaseInterface interface {
 
 type UsersRepoInterface interface {
 	UsersLogin(ctx context.Context, domain Domain) (Domain, error)
-	UsersGetById(ctx context.Context, id string) (Domain, error)
+	UsersGetByID(ctx context.Context, id string) (Domain, error)
 	UsersGetAll(ctx context.Context) ([]Domain, error)
 	UsersAdd(ctx context.Context, domain Domain) (Domain, error)
 	UsersUpdate(ctx context.Context, domain Domain) (Domain, error)

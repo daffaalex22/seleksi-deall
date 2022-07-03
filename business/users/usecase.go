@@ -38,7 +38,7 @@ func (usecase *UsersUseCase) UsersLogin(ctx context.Context, domain Domain) (Dom
 		return Domain{}, err
 	}
 
-	user.Token, err = usecase.ConfigJWT.GenerateTokenJWT(user.Id, user.IsAdmin)
+	user.Token, err = usecase.ConfigJWT.GenerateTokenJWT(user.ID, user.IsAdmin)
 
 	if err != nil {
 		return Domain{}, err
@@ -56,19 +56,22 @@ func (usecase *UsersUseCase) UsersGetAll(ctx context.Context) ([]Domain, error) 
 	return result, nil
 }
 
-func (usecase *UsersUseCase) UsersGetById(ctx context.Context, id string) (Domain, error) {
+func (usecase *UsersUseCase) UsersGetByID(ctx context.Context, id string) (Domain, error) {
 
-	result, err := usecase.repo.UsersGetById(ctx, id)
-	if err != nil {
-		return Domain{}, err
+	users, res := usecase.repo.UsersGetByID(ctx, id)
+	if res != nil {
+		return Domain{}, res
+	}
+	if (users.CreatedAt == time.Time{}) {
+		return Domain{}, err.ErrNotFound
 	}
 
-	return result, nil
+	return users, nil
 }
 
 func (usecase *UsersUseCase) UsersAdd(ctx context.Context, domain Domain) (Domain, error) {
-	if domain.Id == "" {
-		domain.Id = uuid.NewV4().String()
+	if domain.ID == "" {
+		domain.ID = uuid.NewV4().String()
 	}
 	if domain.Name == "" {
 		return Domain{}, err.ErrNameEmpty
@@ -89,8 +92,8 @@ func (usecase *UsersUseCase) UsersAdd(ctx context.Context, domain Domain) (Domai
 
 func (usecase *UsersUseCase) UsersUpdate(ctx context.Context, domain Domain) (Domain, error) {
 
-	if domain.Id == "" {
-		return Domain{}, err.ErrIdEmpty
+	if domain.ID == "" {
+		return Domain{}, err.ErrIDEmpty
 	}
 	if domain.Name == "" {
 		return Domain{}, err.ErrNameEmpty
@@ -105,6 +108,9 @@ func (usecase *UsersUseCase) UsersUpdate(ctx context.Context, domain Domain) (Do
 	users, result := usecase.repo.UsersUpdate(ctx, domain)
 	if result != nil {
 		return Domain{}, result
+	}
+	if (users.CreatedAt == time.Time{}) {
+		return Domain{}, err.ErrNotFound
 	}
 	return users, nil
 }

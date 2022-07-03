@@ -41,7 +41,7 @@ func dbMigrate(db *gorm.DB) {
 	}
 
 	res := db.Create(&usersRepo.Users{
-		Id:       uuid.NewV4().String(),
+		ID:       uuid.NewV4().String(),
 		Name:     "Admin",
 		Email:    "admin@gmail.com",
 		Password: hashedPassword,
@@ -52,7 +52,7 @@ func dbMigrate(db *gorm.DB) {
 	}
 
 	res = db.Create(&usersRepo.Users{
-		Id:       uuid.NewV4().String(),
+		ID:       uuid.NewV4().String(),
 		Name:     "User",
 		Email:    "user@gmail.com",
 		Password: hashedPassword,

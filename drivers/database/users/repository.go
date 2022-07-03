@@ -47,7 +47,7 @@ func (repo *UsersRepository) UsersGetAll(ctx context.Context) ([]users.Domain, e
 	return ToDomainList(newUsers), nil
 }
 
-func (repo *UsersRepository) UsersGetById(ctx context.Context, id string) (users.Domain, error) {
+func (repo *UsersRepository) UsersGetByID(ctx context.Context, id string) (users.Domain, error) {
 	var newUsers Users
 	resultAdd := repo.db.Where("id = ?", id).Find(&newUsers)
 	if resultAdd.Error != nil {
@@ -74,13 +74,14 @@ func (repo *UsersRepository) UsersAdd(ctx context.Context, domain users.Domain) 
 }
 
 func (repo *UsersRepository) UsersUpdate(ctx context.Context, domain users.Domain) (users.Domain, error) {
-	var targetTable Users
-	newUsers := FromDomain(domain)
-	resultUpdate := repo.db.Model(&targetTable).Where("id = ?", newUsers.Id).Updates(newUsers)
+	var user Users
+	updateUser := FromDomain(domain)
+
+	resultUpdate := repo.db.Model(&user).Where("id = ?", updateUser.ID).Updates(updateUser)
 	if resultUpdate.Error != nil {
 		return users.Domain{}, resultUpdate.Error
 	}
-	return newUsers.ToDomain(), nil
+	return updateUser.ToDomain(), nil
 }
 
 func (repo *UsersRepository) UsersDelete(ctx context.Context, id string) error {

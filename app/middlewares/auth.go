@@ -22,7 +22,7 @@ var (
 )
 
 type JwtCustomClaims struct {
-	UserId string /*`json:"userId"`*/
+	UserID string /*`json:"userID"`*/
 	jwt.StandardClaims
 	Roles []int
 }
@@ -39,7 +39,7 @@ func (jwtConf *ConfigJWT) Init() middleware.JWTConfig {
 	}
 }
 
-func (jwtConf *ConfigJWT) GenerateTokenJWT(UserId string, isAdmin bool) (string, error) {
+func (jwtConf *ConfigJWT) GenerateTokenJWT(UserID string, isAdmin bool) (string, error) {
 	var Roles []int
 	if isAdmin {
 		Roles = AdminLevel
@@ -48,7 +48,7 @@ func (jwtConf *ConfigJWT) GenerateTokenJWT(UserId string, isAdmin bool) (string,
 	}
 
 	claims := JwtCustomClaims{
-		UserId,
+		UserID,
 		jwt.StandardClaims{
 			ExpiresAt: time.Now().Local().Add(time.Hour * time.Duration(int64(jwtConf.ExpiresDuration))).Unix(),
 		},
@@ -91,7 +91,7 @@ func ValidateAuthorization(ctx echo.Context, allowedRoles []int) (payload *JwtCu
 		return tokenPayload, nil
 	}
 
-	if tokenPayload.UserId == "" {
+	if tokenPayload.UserID == "" {
 		return nil, err.ErrUnauthorized
 	}
 

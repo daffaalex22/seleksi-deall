@@ -3,7 +3,7 @@ package requests
 import "github.com/daffaalex22/seleksi-deall/business/users"
 
 type UserUpdate struct {
-	Id       string `json:"id"`
+	ID       string `json:"id"`
 	Name     string `json:"name"`
 	Email    string `json:"email"`
 	Password string `json:"password"`
@@ -12,7 +12,7 @@ type UserUpdate struct {
 
 func (user *UserUpdate) ToDomain() users.Domain {
 	return users.Domain{
-		Id:       user.Id,
+		ID:       user.ID,
 		Name:     user.Name,
 		Email:    user.Email,
 		Password: user.Password,

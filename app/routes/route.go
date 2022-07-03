@@ -33,7 +33,7 @@ func (controller RouteControllerList) RouteRegister(e *echo.Echo) {
 		controller.UsersController.UsersDelete,
 		jwtMiddleware)
 	e.GET("/users/:id",
-		controller.UsersController.UsersGetById,
+		controller.UsersController.UsersGetByID,
 		jwtMiddleware)
 	e.GET("/users/me",
 		controller.UsersController.UsersGetMyData,

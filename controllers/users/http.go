@@ -58,7 +58,7 @@ func (controller *UsersController) UsersGetAll(c echo.Context) error {
 	return controllers.SuccessResponse(c, response.FromDomainList(data))
 }
 
-func (controller *UsersController) UsersGetById(c echo.Context) error {
+func (controller *UsersController) UsersGetByID(c echo.Context) error {
 	token, res := middlewares.ValidateAuthorization(c, []int{middlewares.RoleAdmin})
 	if res != nil || token == nil {
 		return controllers.ErrorResponse(c, err.ErrUnathorizedCheck(res), "error request", res)
@@ -67,7 +67,7 @@ func (controller *UsersController) UsersGetById(c echo.Context) error {
 	id := c.Param("id")
 
 	ctx := c.Request().Context()
-	data, result := controller.usecase.UsersGetById(ctx, id)
+	data, result := controller.usecase.UsersGetByID(ctx, id)
 	if result != nil {
 		codeErr := err.ErrDeleteUsersCheck(result)
 		return controllers.ErrorResponse(c, codeErr, "error request", result)
@@ -138,10 +138,10 @@ func (controller *UsersController) UsersGetMyData(c echo.Context) error {
 		return controllers.ErrorResponse(c, err.ErrUnathorizedCheck(res), "error request", res)
 	}
 
-	id := token.UserId
+	id := token.UserID
 
 	ctx := c.Request().Context()
-	data, result := controller.usecase.UsersGetById(ctx, id)
+	data, result := controller.usecase.UsersGetByID(ctx, id)
 	if result != nil {
 		codeErr := err.ErrDeleteUsersCheck(result)
 		return controllers.ErrorResponse(c, codeErr, "error request", result)

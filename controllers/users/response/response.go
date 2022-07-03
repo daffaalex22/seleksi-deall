@@ -7,7 +7,7 @@ import (
 )
 
 type UsersResponse struct {
-	Id        string    `json:"id"`
+	ID        string    `json:"id"`
 	Name      string    `json:"name"`
 	Email     string    `json:"email"`
 	IsAdmin   bool      `json:"is_admin"`
@@ -16,7 +16,7 @@ type UsersResponse struct {
 }
 
 type LoginUsersResponse struct {
-	Id        string    `json:"id"`
+	ID        string    `json:"id"`
 	Name      string    `json:"name"`
 	Email     string    `json:"email"`
 	Token     string    `json:"token"`
@@ -27,7 +27,7 @@ type LoginUsersResponse struct {
 
 func FromDomain(domain users.Domain) UsersResponse {
 	return UsersResponse{
-		Id:        domain.Id,
+		ID:        domain.ID,
 		Email:     domain.Email,
 		Name:      domain.Name,
 		IsAdmin:   domain.IsAdmin,
@@ -46,7 +46,7 @@ func FromDomainList(domain []users.Domain) []UsersResponse {
 
 func FromDomainLogin(domain users.Domain) LoginUsersResponse {
 	return LoginUsersResponse{
-		Id:        domain.Id,
+		ID:        domain.ID,
 		Email:     domain.Email,
 		Token:     domain.Token,
 		Name:      domain.Name,
