@@ -48,6 +48,7 @@ Running the project locally is pretty straightforward. Follow the How To Run The
 ### Public IP Address
 ---
 <br>
+
 ## How To Run The Project
 The project is (currently) can only be ran locally.
 
