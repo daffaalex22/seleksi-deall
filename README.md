@@ -2,7 +2,7 @@
 ### By **Daffa' Alexander**: for Deall Backend Engineer Application Process (Technical Assessment)
 
 ## Key Points
- * The api hasn't deployed on a VPS as requested (only locally using minikube, yaml files are attached). To compensate for this, the author adds some additional features including:
+ * The API hasn't deployed on a VPS as requested (only locally using minikube, yaml files are attached). To compensate for this, the author adds some additional features including:
     - Clean Code Architecture
     - Unit Testing
     - Additional endpoint for getting user by id
@@ -78,7 +78,7 @@ kubectl get all
 ```
 Or
 ```
-$ kubectl get pods
+kubectl get pods
 ```
 
 5. Forward service to be LOCALLY accessible. With the following command, minikube will return a url for accessing the API. The API is can then be tested on postman.
