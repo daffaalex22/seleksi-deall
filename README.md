@@ -6,6 +6,7 @@
     - Clean Code Architecture
     - Unit Testing
     - Additional endpoint for getting user by id
+    - Authentication and Authorization is using [JSON Web Token](https://jwt.io/)
  * The screenshot for prove of local deployment is attached [here](https://google.com) inside the screenshots folder
  * The Architecture Diagram is attached on the root folder as [local-architecture-diagram.png](https://github.com/daffaalex22/seleksi-deall/blob/main/local-architecture-diagram.png).
  * The API Documentation is accessible [here](https://documenter.getpostman.com/view/17548510/UzJFudHb)
