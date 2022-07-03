@@ -1,3 +1,5 @@
 .vscode
 k8s-ec2.pem
 cli
+kubectl
+kubectl.sha256
