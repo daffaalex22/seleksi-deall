@@ -45,7 +45,7 @@ Deployment:
 The API Documentation can be accessed [here](https://documenter.getpostman.com/view/17548510/UzJFudHb).
 
 ### Local
-Deploying the project locally is pretty straightforward. Follow the [How To Deploy The Project Locally](https://github.com/daffaalex22/seleksi-deall#how-to-deploy-the-project-locally) part and access the following address with the route provided in the [API Documentation](https://documenter.getpostman.com/view/17548510/UzJFudHb). 
+Deploying the project locally is pretty straightforward. Follow the [How To Deploy The Project Locally](https://github.com/daffaalex22/seleksi-deall#how-to-deploy-the-project-locally) part and access with routes provided in the [API Documentation](https://documenter.getpostman.com/view/17548510/UzJFudHb). 
 
 It can be also ran without Docker or Kubernetes. 
 1. Clone the repo.
