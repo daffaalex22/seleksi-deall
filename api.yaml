@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: daffaalex22/seleksi_deall:1.0.2
+          image: daffaalex22/seleksi_deall:1.0.3
           ports:
             - containerPort: 8080
           env:
