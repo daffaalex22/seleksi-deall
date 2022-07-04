@@ -109,7 +109,7 @@ func (usecase *UsersUseCase) UsersUpdate(ctx context.Context, domain Domain) (Do
 	if result != nil {
 		return Domain{}, result
 	}
-	if (users.CreatedAt == time.Time{}) {
+	if (users.CreatedAt == time.Time{} && users.Email == "") {
 		return Domain{}, err.ErrNotFound
 	}
 	return users, nil
