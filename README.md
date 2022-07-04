@@ -1,5 +1,5 @@
 # REST API 
-### By **Daffa' Alexander**: for Deall Backend Engineer Application Process (Technical Assessment)
+#### By: **Daffa' Alexander**, for Deall Backend Engineer Application Process (Technical Assessment)
 ---
 ## Key Points
  * The API hasn't deployed on a VPS as requested (only [locally using minikube](https://github.com/daffaalex22/seleksi-deall#how-to-deploy-the-project-locally), yaml files for [the API](https://github.com/daffaalex22/seleksi-deall/blob/main/api.yaml) and [the database](https://github.com/daffaalex22/seleksi-deall/blob/main/mysql.yaml) are attached). To compensate for this, the author adds some additional features including:
@@ -20,12 +20,11 @@
  > email: user@gmail.com
  > 
  > password: deall123
----
+
 ## Description
 This is a REST API mini-project created for Deall Application Proccess for Backend Engineer position. The project is created in Go Programming Language and uses MySQL as the RDBMS. The project is using Uncle Bob's Clean Architecture of Systems. See more [here](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html). Without further ado, lets jump right in into the contents.
 
-<br>
----
+
 ## Tech Stacks
 As previously mentioned, the project is created using **Go**  Programming Language and **MySQL** RDBMS. The Technologies/Libraries use in this project are followings:
  * [Echo](echo.labstack.com) Web Framework
@@ -41,7 +40,6 @@ Deployment:
  * Docker
  * [Minikube](https://minikube.sigs.k8s.io/docs/) for Local Kubernetes Cluster
 
----
 ## Accessing The API
 The API Documentation can be accessed [here](https://documenter.getpostman.com/view/17548510/UzJFudHb).
 
@@ -102,7 +100,6 @@ go tool cover -html="cover.out"
 
 <br>
 
----
 ## How To Deploy The Project Locally
 The project is (currently) can only be ran locally.
 
