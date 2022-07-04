@@ -52,9 +52,9 @@ It can be also ran without Docker or Kubernetes.
 2. Provides the following environment variables. Make sure MySQL is installed and schema created. Type those values in to their respective variables.
 ```
 DB_URL=localhost:3306
-DB_USER=YOUR_MYSQL_USERNAME
-DB_PASSWORD=YOUR_MYSQL_PASSWORD
-DB_NAME=YOUR_CREATED_DB
+DB_USER=<<YOUR_MYSQL_USERNAME>>
+DB_PASSWORD=<<YOUR_MYSQL_PASSWORD>>
+DB_NAME=<<YOUR_CREATED_DB>>
 ```
 Or use the following launch.json for running on debug mode on vscode:
 ```
@@ -70,9 +70,9 @@ Or use the following launch.json for running on debug mode on vscode:
             "cwd": "${workspaceFolder}",
             "env": {
                 "DB_URL": "localhost:3306",
-                "DB_USER": "YOUR_MYSQL_USERNAME",
-                "DB_PASSWORD": "YOUR_MYSQL_PASSWORD",
-                "DB_NAME": "YOUR_CREATED_DB",
+                "DB_USER": <<YOUR_MYSQL_USERNAME>>,
+                "DB_PASSWORD": <<YOUR_MYSQL_PASSWORD>>,
+                "DB_NAME": <<YOUR_CREATED_DB>>,
             },
             "args": []
         }
