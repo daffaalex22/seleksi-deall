@@ -1,15 +1,15 @@
 # REST API 
 ### By **Daffa' Alexander**: for Deall Backend Engineer Application Process (Technical Assessment)
-
+---
 ## Key Points
- * The API hasn't deployed on a VPS as requested (only locally using minikube, yaml files are attached). To compensate for this, the author adds some additional features including:
-    - Authentication and Authorization is using [JSON Web Token](https://jwt.io/)
-    - Clean Code Architecture
-    - Unit Testing
-    - Additional endpoint for getting user by id
+ * The API hasn't deployed on a VPS as requested (only [locally using minikube](https://github.com/daffaalex22/seleksi-deall#how-to-deploy-the-project-locally), yaml files for [the API](https://github.com/daffaalex22/seleksi-deall/blob/main/api.yaml) and [the database](https://github.com/daffaalex22/seleksi-deall/blob/main/mysql.yaml) are attached). To compensate for this, the author adds some additional features including:
+    - The usage of [JSON Web Token](https://jwt.io/) as shown [here](https://github.com/daffaalex22/seleksi-deall/blob/main/app/middlewares/auth.go);
+    - [Clean Code Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html);
+    - Unit Testing as shown [here](https://github.com/daffaalex22/seleksi-deall/edit/main/README.md#unit-testing);
+    - Additional endpoint for getting user by id as shown [here](https://github.com/daffaalex22/seleksi-deall/blob/main/app/routes/route.go#L35).
 
- * The screenshot for proof of local deployment is attached [here](https://google.com) inside the screenshots folder
- * The Architecture Diagram is attached on the root folder as [local-architecture-diagram.png](https://github.com/daffaalex22/seleksi-deall/blob/main/local-architecture-diagram.png).
+ * The screenshot for proof of local deployment is attached [here](https://github.com/daffaalex22/seleksi-deall/tree/main/local-deployment-screenshots) inside the local-deployment-screenshots folder. View it according to the sorted order.
+ * The Architecture Diagram can be accessed on [Figjam](https://www.figma.com/file/AtXxHmWi7XDiYXvN7MscQb/Architecture-Diagram?node-id=0%3A1). It is also attached inside the root folder as [local-architecture-diagram.png](https://github.com/daffaalex22/seleksi-deall/blob/main/local-architecture-diagram.png).
  * The API Documentation is accessible [here](https://documenter.getpostman.com/view/17548510/UzJFudHb)
  * Admin credential is the following
  > email: admin@gmail.com
@@ -20,12 +20,12 @@
  > email: user@gmail.com
  > 
  > password: deall123
-
+---
 ## Description
-This is a REST API mini-project created for Deall Application Proccess for Backend Engineer position. The project is created in Go Programming Language and uses MySQL as the RDBMS. Without further ado, lets jump right in into the contents.
+This is a REST API mini-project created for Deall Application Proccess for Backend Engineer position. The project is created in Go Programming Language and uses MySQL as the RDBMS. The project is using Uncle Bob's Clean Architecture of Systems. See more [here](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html). Without further ado, lets jump right in into the contents.
 
-The project is using Uncle Bob's Clean Architecture of Systems. See more [here](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
 <br>
+---
 ## Tech Stacks
 As previously mentioned, the project is created using **Go**  Programming Language and **MySQL** RDBMS. The Technologies/Libraries use in this project are followings:
  * [Echo](echo.labstack.com) Web Framework
@@ -41,12 +41,14 @@ Deployment:
  * Docker
  * [Minikube](https://minikube.sigs.k8s.io/docs/) for Local Kubernetes Cluster
 
+---
 ## Accessing The API
 The API Documentation can be accessed [here](https://documenter.getpostman.com/view/17548510/UzJFudHb).
 
 ### Local
 Deploying the project locally is pretty straightforward. Follow the [How To Deploy The Project Locally](https://github.com/daffaalex22/seleksi-deall#how-to-deploy-the-project-locally) part and access with routes provided in the [API Documentation](https://documenter.getpostman.com/view/17548510/UzJFudHb). 
 
+#### Running Locally
 It can be also ran without Docker or Kubernetes. 
 1. Clone the repo.
 2. Provides the following environment variables. Make sure MySQL is installed and schema created. Type those values in to their respective variables.
@@ -86,10 +88,21 @@ go run main.go
 4. Then access the following url.
 > http://localhost:8080/
 
+#### Unit Testing
+Run the following command to test the API. 
+> The following command is applicable for Windows Powershell. Other OS might edit some of the command for it to run.
+```bash
+go test ./... -coverprofile="cover.out"
+go test ./business/ -coverprofile="cover.out"
+go tool cover -html="cover.out"
+```
+
+
 ### Public IP Address
----
+
 <br>
 
+---
 ## How To Deploy The Project Locally
 The project is (currently) can only be ran locally.
 
