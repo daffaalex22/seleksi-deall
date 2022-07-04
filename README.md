@@ -3,10 +3,10 @@
 ---
 ## Key Points
  * The API hasn't deployed on a VPS as requested (only [locally using minikube](https://github.com/daffaalex22/seleksi-deall#how-to-deploy-the-project-locally), yaml files for [the API](https://github.com/daffaalex22/seleksi-deall/blob/main/api.yaml) and [the database](https://github.com/daffaalex22/seleksi-deall/blob/main/mysql.yaml) are attached). To compensate for this, the author adds some additional features including:
-    - The usage of [JSON Web Token](https://jwt.io/) as shown [here](https://github.com/daffaalex22/seleksi-deall/blob/main/app/middlewares/auth.go);
     - [Clean Code Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html);
     - Unit Testing as shown [here](https://github.com/daffaalex22/seleksi-deall/edit/main/README.md#unit-testing);
-    - Additional endpoint for getting user by id as shown [here](https://github.com/daffaalex22/seleksi-deall/blob/main/app/routes/route.go#L35).
+    - Additional endpoint for getting user by id as shown [here](https://github.com/daffaalex22/seleksi-deall/blob/main/app/routes/route.go#L35);
+    - The usage of [JSON Web Token](https://jwt.io/) as shown [here](https://github.com/daffaalex22/seleksi-deall/blob/main/app/middlewares/auth.go).
 
  * The screenshot for proof of local deployment is attached [here](https://github.com/daffaalex22/seleksi-deall/tree/main/local-deployment-screenshots) inside the local-deployment-screenshots folder. View it according to the sorted order.
  * The Architecture Diagram can be accessed on [Figjam](https://www.figma.com/file/AtXxHmWi7XDiYXvN7MscQb/Architecture-Diagram?node-id=0%3A1). It is also attached inside the root folder as [local-architecture-diagram.png](https://github.com/daffaalex22/seleksi-deall/blob/main/local-architecture-diagram.png).
