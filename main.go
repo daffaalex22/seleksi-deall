@@ -69,7 +69,7 @@ func main() {
 		DB_Username: os.Getenv("DB_USER"),
 		DB_Password: os.Getenv("DB_PASSWORD"),
 		DB_Host:     os.Getenv("DB_HOST"),
-		DB_Port:     os.Getenv("PORT"),
+		DB_Port:     os.Getenv("DB_PORT"),
 		DB_Database: os.Getenv("DB_NAME"),
 	}
 
