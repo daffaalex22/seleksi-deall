@@ -79,7 +79,7 @@ func main() {
 	}
 
 	var db *gorm.DB
-	if configDb.DB_Host == "" || configDb.DB_Port == "" {
+	if configDb.DB_Host == "" && configDb.DB_Port == "" {
 		db = configDb.InitialDBWithURL()
 	} else {
 		db = configDb.InitialDB()
